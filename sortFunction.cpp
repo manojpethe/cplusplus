@@ -7,16 +7,16 @@ int main(){
     int newArray[5];
     int largestIntIndex = 0;
     int largestInt = 0;
-    for(int ni = 1 ; ni < size(myArray) ; ni++){
+    for(int ni = 0 ; ni < size(myArray) ; ni++){
         if(myArray[ni] == -1){
             continue;
         }
-        if(myArray[ni-1] > myArray[ni] && myArray[ni-1] > largestInt ){
-            cout << myArray[ni-1] << " > than " << myArray[ni] << endl;
-            largestInt = myArray[ni-1];
-            largestIntIndex = ni-1;
+        if(myArray[ni] > myArray[ni+1] && myArray[ni] > largestInt ){
+            cout << myArray[ni] << " > than " << myArray[ni+1] << endl;
+            largestInt = myArray[ni];
+            largestIntIndex = ni;
         }
-        cout << myArray[ni] << " " <<  largestInt << " " << largestIntIndex  << endl;
+        cout << "Iteration:" << ni << " " << myArray[ni] << " " <<  largestInt << " " << largestIntIndex  << endl;
     }
 
 }
