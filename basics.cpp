@@ -6,7 +6,7 @@ using namespace std;
 
 namespace dev {
     string author = "Manoj Pethe";
-    long int phone = 9823282613;
+    long long int phone = 9823282613;
 }
 
 int main(){

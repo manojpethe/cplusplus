@@ -30,7 +30,7 @@ int main() {
     std::cout << "--- Program Start ---\n";
 
     // Get the instance and modify data
-    SettingManager& s1 = SettingManager::getInstance();
+    SettingManager & s1 = SettingManager::getInstance();
     s1.theme = "Dark Mode";
     s1.displayTheme();
 

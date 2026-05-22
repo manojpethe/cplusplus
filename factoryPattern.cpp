@@ -10,10 +10,6 @@ private:
 public:
     virtual void startEngine() = 0;
     virtual void stopEngine() = 0;
-    virtual void changeGear() = 0;
-    virtual void pressGas() = 0;
-    virtual void pressBrake() = 0;
-    virtual void pressClutch() = 0;
 };
 
 class Tesla : public Car {
@@ -31,23 +27,8 @@ public:
     void stopEngine(){
         cout << this->name << ": Engine Stopped"<< endl;
     };
-    void changeGear(){
-        cout << this->name << ": Hey I have autotranmsission"<< endl;
-    };
-    void pressGas(){
-        cout << this->name << ": Vroom Vroom"<< endl;
-    };
-    void pressBrake(){
-        cout << this->name << ": Oh Crap...........!"<< endl;
-    };
-    void pressClutch(){
-        cout << this->name << ": Slowing down.... phew..."<< endl;
-    };
-
     ~Tesla(){}
-
 };
-
 
 class Suzuki : public Car {
 private:
@@ -64,23 +45,8 @@ public:
     void stopEngine(){
         cout << this->name << ": Engine Stopped"<< endl;
     };
-    void changeGear(){
-        cout << this->name << ": Gear changed!!"<< endl;
-    };
-    void pressGas(){
-        cout << this->name << ": Vroom Vroom"<< endl;
-    };
-    void pressBrake(){
-        cout << this->name << ": Oh Crap...........!"<< endl;
-    };
-    void pressClutch(){
-        cout << this->name << ": Slowing down.... phew..."<< endl;
-    };
-
     ~Suzuki(){}
-
 };
-
 
 class CarFactory {
 public:
@@ -96,21 +62,15 @@ public:
     }
 };
 
-
-
 int main(){
 
     cout << "--- Factory Pattern Execution ---" << endl;
 
-    The client doesn't use the 'Tesla' class directly. 
-    It asks the Factory to build a car.
     unique_ptr<Car> myCar = CarFactory::buildCar("Tesla", "Model 3");
 
     if (myCar) {
         myCar->startEngine();
-        myCar->changeGear();
-        myCar->pressGas();
-        myCar->pressBrake();
+        myCar->stopEngine();
     } else {
         cout << "Car type not recognized by factory." << endl;
     }
