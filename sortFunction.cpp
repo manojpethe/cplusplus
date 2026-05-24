@@ -7,17 +7,30 @@ int main(){
     int newArray[5];
     int largestIntIndex = 0;
     int largestInt = 0;
+    int nextInt = 0;
     for(int i = 0; i < size(myArray) ; i++){
         for(int ni = 0 ; ni < size(myArray) ; ni++){
             if(myArray[ni] == -1){ continue; }
-            if(myArray[ni] < largestInt) { continue;}
-            if(myArray[ni] > myArray[ni+1] ){
-                cout << myArray[ni] << " > than " << myArray[ni+1] << endl;
+            if(myArray[ni] < largestInt) { 
+                cout << "largest int:" << largestInt << " is greater than " << myArray[ni] << endl;
+                continue;
+            }
+            cout << "comparing: "<< myArray[ni] << " with " << myArray[ni+1] << endl;
+            cout << "Debug: "<< ni+1 << " / " << size(myArray) << endl;
+            if( ni+1 < size(myArray)){
+                nextInt = myArray[ni+1];
+            } else if ( ni+1 == size(myArray) ){
+                nextInt = -1;
+            }
+            if(myArray[ni] > nextInt ){
+                cout << myArray[ni] << " > than " << nextInt << endl;
                 largestInt = myArray[ni];
                 largestIntIndex = ni;
             }
-            cout << "inner loop:" << ni << " " << myArray[ni] << " " <<  largestInt << " " << largestIntIndex  << endl;
+            // cout << "inner loop:" << ni << endl;
+            // cout << ":inner loop end:" << endl;
         }
+        cout << "outer loop end:" << endl;
 
         // add the largest integer to newArray
         newArray[i] = largestInt;
