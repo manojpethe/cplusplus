@@ -15,20 +15,18 @@ int main(){
                 cout << "largest int:" << largestInt << " is greater than " << myArray[ni] << endl;
                 continue;
             }
-            cout << "comparing: "<< myArray[ni] << " with " << myArray[ni+1] << endl;
             cout << "Debug: "<< ni+1 << " / " << size(myArray) << endl;
             if( ni+1 < size(myArray)){
                 nextInt = myArray[ni+1];
             } else if ( ni+1 == size(myArray) ){
                 nextInt = -1;
             }
+            cout << "comparing: "<< myArray[ni] << " with " << nextInt << endl;
             if(myArray[ni] > nextInt ){
                 cout << myArray[ni] << " > than " << nextInt << endl;
                 largestInt = myArray[ni];
                 largestIntIndex = ni;
             }
-            // cout << "inner loop:" << ni << endl;
-            // cout << ":inner loop end:" << endl;
         }
         cout << "outer loop end:" << endl;
 
