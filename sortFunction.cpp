@@ -36,13 +36,9 @@ int main(){
         myArray[largestIntIndex] = -1;
         // resetting largest int to 0 so that next one can be picked up.
         largestInt = 0;
-        // cout << "First element: "<< newArray[0] << endl;
-        // for(int i = 0; i < 5; i++){
-        //     cout << myArray[i] << endl;
-        // }
     }
+    cout << "Final output:" << endl;
     for(int i = 0; i < 5; i++){
         cout << newArray[i] << endl;
     }
-
 }
